@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Daftar{% endblock %}
+{% block content %}
+<h1 align="center">Daftar</h1>
+<form method="POST">
+<div class="form-group">
+    <label for="email">Alamat Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email">
+</div>
+<div class="form-group">
+    <label for="username">Nama Pengguna</label>
+    <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan nama pengguna">
+</div>
+<div class="form-group">
+    <label for="password">Kata Sandi</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan kata sandi">
+</div>
+<br />
+<button type="submit" class="btn btn-dark">Kirim</button>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Profil{% endblock %}
+{% block content %}
+<h1>Bio Profil Anda!</h1>
+<h2>{{ Bio }}</h2>
+<br>
+<form method="POST">
+    <div class="form-group profile-div">
+        <label for="bio">Ubah Bio!</label>
+        <input type="text" class="form-control" id="password" name="bio" placeholder="Masukkan bio">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-dark">✏️</button>
+</form>
+<br>
+<a class="fp-link" href="/getlink">Bagikan Profil Anda?</a>
+{% endblock %}

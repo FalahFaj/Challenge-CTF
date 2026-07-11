@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Beranda{% endblock %}
+{% block content %}
+
+<style>
+    body {
+        background-color: transparent !important;
+        background: black;
+    }
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        pointer-events: none;
+        overflow: hidden;
+    }
+    .video-background iframe {
+        width: 100vw;
+        height: 56.25vw;
+        min-height: 100vh;
+        min-width: 177.77vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .home-container {
+        background: rgba(244, 241, 222, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 50px;
+        border: 2px solid #5C4033;
+        max-width: 800px;
+    }
+</style>
+
+<div class="video-background">
+  <iframe src="https://www.youtube.com/embed/CID-sYQNCew?autoplay=1&mute=0&controls=0&showinfo=0&autohide=1&loop=1&playlist=CID-sYQNCew" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+</div>
+
+<div class="home-container">
+    <h1>Beranda</h1>
+    <h2 style="font-size: 1.5rem; line-height: 1.6; margin-top: 15px;">Selamat datang di jaringan komunikasi rahasia Pasukan Pengintai (Eldia Network). Tujuan utama kita adalah merebut kembali kebebasan umat manusia dari cengkeraman para Titan. Laporkan setiap pergerakan yang mencurigakan.</h2>
+</div>
+{% endblock %}

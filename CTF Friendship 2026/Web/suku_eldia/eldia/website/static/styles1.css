@@ -1,0 +1,53 @@
+.container  {
+    margin-top: 50px;
+    text-align: center;
+    color: #2F4F4F;
+}
+
+.fp-link {
+    color: #5C4033;
+    text-decoration: none;
+}
+
+.submit-button {
+    color: #F4F1DE;
+    background-color: #2F4F4F;
+}
+
+.verification-send-btn {
+    margin-top: 20px;
+}
+
+.file-input {
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border: 1px solid;
+    border-color: #5C4033;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.t-head {
+    padding: 20px;
+    background-color: #2F4F4F;
+    color: #F4F1DE;
+}
+
+.table-div {
+    margin-top: 50px;
+}
+
+.admin-verify {
+    background-color: #F4F1DE;
+    border-color: #5C4033;
+    border-radius: 7px;
+    color: #2F4F4F;
+}
+
+.admin-verify:hover {
+    background-color: #5C4033;
+    color: white;
+}

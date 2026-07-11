@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Dasbor{% endblock %}
+{% block content %}
+
+<style>
+    body {
+        background-color: transparent !important;
+        background: black;
+    }
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        pointer-events: none;
+        overflow: hidden;
+    }
+    .video-background iframe {
+        width: 100vw;
+        height: 56.25vw;
+        min-height: 100vh;
+        min-width: 177.77vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<div class="video-background">
+  <iframe src="https://www.youtube.com/embed/CID-sYQNCew?autoplay=1&mute=0&controls=0&showinfo=0&autohide=1&loop=1&playlist=CID-sYQNCew" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+</div>
+
+<h1 align="center">Ini adalah Dasbor milik {{ user.username }}</h1>
+<h2 align="center">Selamat bertugas, Prajurit. Ini adalah pusat komando Anda. Pastikan semua laporan dan intelijen yang Anda kumpulkan diteruskan ke Komandan dengan aman.</h2>
+{% endblock %}

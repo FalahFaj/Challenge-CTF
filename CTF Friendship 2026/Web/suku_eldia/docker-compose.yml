@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  suku_eldia:
+    build: .
+    container_name: suku_eldia
+    ports:
+      - "1337:1337"
+    restart: unless-stopped

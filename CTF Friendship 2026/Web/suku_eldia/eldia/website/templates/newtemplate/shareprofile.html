@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profil | {{ username }}</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" />
+	<style>
+		body {
+			background-color: #F4F1DE;
+			font-family: 'Oswald', sans-serif;
+			text-align: center;
+			padding: 25px;
+		}
+
+		h1 {
+			font-size: 50px;
+			text-transform: uppercase;
+			font-weight: bold;
+			color: #2F4F4F;
+			letter-spacing: 2px;
+			margin-bottom: 10px;
+		}
+
+		.sprofile-div {
+			display: flex;
+			justify-content: space-between;
+			background-color: rgba(255, 255, 255, 0.7);
+			padding: 20px;
+			border: 2px solid #5C4033;
+			border-radius: 10px;
+		}
+
+		#custom-string {
+			font-size: 20px;
+			line-height: 30px;
+			margin-top: 25px;
+			max-width: 350px;
+			max-height: 300px;
+			overflow: auto;
+		}
+
+		.para-class {
+			color: #3C2A21;
+		}
+
+		@media only screen and (max-width: 1290px) {
+			.sprofile-div {
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="sprofile-div">
+		<div class="h1-div">
+			<h1>Profil: {{ username }}</h1>
+		</div>
+		<div id="custom-string">
+			<p class="para-class">%s</p>
+	    </div>
+	</div>
+
+</body>
+</html>

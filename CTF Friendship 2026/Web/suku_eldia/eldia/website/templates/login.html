@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Masuk{% endblock %}
+{% block content %}
+<h1 align="center">Masuk</h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="username">Nama Pengguna</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan nama pengguna">
+    </div>
+    <div class="form-group">
+        <label for="password">Kata Sandi</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan kata sandi">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-dark">Kirim</button>
+</form>
+<br>
+<a class="fp-link" href="/forgetpassword">Lupa Kata Sandi?</a>
+{% endblock %}
