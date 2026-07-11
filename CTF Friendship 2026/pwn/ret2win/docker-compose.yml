@@ -1,0 +1,12 @@
+services:
+  ret2win:
+    build: .
+    container_name: ret2win-challenge
+    ports:
+      - "2001:2001"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp

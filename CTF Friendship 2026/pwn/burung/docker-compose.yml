@@ -1,0 +1,12 @@
+services:
+  burung:
+    build: .
+    container_name: burung-challenge
+    ports:
+      - "2003:2003"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp

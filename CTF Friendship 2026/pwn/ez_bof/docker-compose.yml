@@ -1,0 +1,12 @@
+services:
+  ez_bof:
+    build: .
+    container_name: ez_bof-challenge
+    ports:
+      - "2002:2002"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp

@@ -1,0 +1,12 @@
+services:
+  aku_suka_kue:
+    build: .
+    container_name: aku_suka_kue-challenge
+    ports:
+      - "2004:2004"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp

@@ -1,0 +1,12 @@
+services:
+  tukang_rakit:
+    build: .
+    container_name: tukang_rakit-challenge
+    ports:
+      - "2005:2005"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
