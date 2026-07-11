@@ -1,19 +1,15 @@
-name: Transcriptify
+name: Transkip Nilai
 categories:
   - webex
-value: 200
+value: 500
 flag:
   file: ./flag.txt
 description: |-
-  The secretaries at my school are tired of manually processing
-  transcript requests, so they've built an app to the job for them.
-  You would hope that anything handling private student info would
-  be secure, right? I hope so too.
+  Para dosen di Fasilkom mendapat tugas untuk transkip nilai para mahasiswanya, karena manual terlalu lama, jadi mereka meminta bantuan UPA TIK untuk membuatkan transkip otomatis, harusnya sih normal dan aman ya, tapi entahlah
 deploy:
   web:
     build: .
     expose: 3000/tcp
 hints: []
 authors:
-  - Thomas
-visible: true
+  - Falah
