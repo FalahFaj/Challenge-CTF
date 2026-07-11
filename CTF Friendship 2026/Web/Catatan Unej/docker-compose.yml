@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web:
+    build: ./web
+    container_name: chall_catatan_unej
+    ports:
+      - "8079:5000" 
+    networks:
+      - ctf-net
+    restart: always
+
+  bot:
+    build: ./bot
+    container_name: chal_catatan_unej
+    environment:
+      - TARGET_URL=http://web:5000/
+      - FLAG=FS26{Testing}
+    networks:
+      - ctf-net
+    depends_on:
+      - web
+    restart: always
+
+networks:
+  ctf-net:
+    driver: bridge
