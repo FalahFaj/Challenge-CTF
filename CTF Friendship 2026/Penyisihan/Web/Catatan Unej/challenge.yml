@@ -1,0 +1,11 @@
+name: Catatan Unej
+author: Falah
+description: >-
+  Catat-catat, aku mau nyatat biar dibaca admint
+
+  URL: https://{{ .host }}
+type: StaticAttachment
+category: Web
+difficulty: 2
+flags:
+- FS26{A51k_k4n_y4_p4k41_b0t_61n14n_21e94y}
