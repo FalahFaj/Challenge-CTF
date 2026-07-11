@@ -1,16 +1,11 @@
-name: "User #1"
+name: "Ngawi Island"
 categories:
   - webex
-value: 150
+value: 400
 flag:
   file: ./flag.txt
 description: |
-  I was working on this website and wanted you to check it out.
-  The code is a bit of a mess, since it's only an extremely early version.
-  In fact, you're the very first user, with ID 1! 
-  
-  PLEASE NOTE: What you do should, in theory, not affect other solvers.
-  Please let us know if this is not the case.
+  Ibaratnya kamu jadi suki, terus mau ngeinvasi ngawi island
 hints:
   - The form is vulnerable to SQL injection (it uses an UPDATE statement).
   - You will always have user ID 1.
@@ -19,5 +14,5 @@ deploy:
     build: .
     expose: 7272/tcp
 authors:
-  - Marvin
+  - Falah
 visible: true
