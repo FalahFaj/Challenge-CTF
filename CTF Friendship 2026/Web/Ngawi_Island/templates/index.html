@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngawi Empire Registry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --primary: #d4af37; /* Gold for royalty */
+            --primary-glow: rgba(212, 175, 55, 0.6);
+            --secondary: #8a2be2;
+            --surface: rgba(20, 20, 20, 0.85);
+            --text-main: #f2f2f2;
+            --text-muted: #b3b3b3;
+            --danger: #ff4d4d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.1), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.1), transparent 30%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: var(--surface);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 750px;
+            width: 100%;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 30px var(--primary-glow);
+            position: relative;
+            z-index: 1;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 1.5rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--primary), #fff8dc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .status-box {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .status-box:hover {
+            border-left-color: var(--secondary);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .status-box h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .flag-box {
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.15), rgba(138, 43, 226, 0.15));
+            border: 1px dashed var(--primary);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 1.3rem;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .input-wrapper {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #fff;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        button {
+            background: linear-gradient(45deg, var(--primary), #b8860b);
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .footer-info {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .error-box {
+            background: rgba(255, 77, 77, 0.1);
+            border-left: 4px solid var(--danger);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .error-box h3 {
+            color: var(--danger);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-box p {
+            color: #ffb3b3;
+            font-size: 0.95rem;
+        }
+
+        .error-box a {
+            color: #fff;
+            text-decoration: underline;
+            text-decoration-color: var(--danger);
+        }
+        
+        .lore-badge {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+            border: 1px solid rgba(255,255,255,0.2);
+            text-transform: uppercase;
+        }
+
+        .dangdut-audio {
+            margin-top: 1.5rem;
+            width: 100%;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+        .dangdut-audio:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="lore-badge">Est. 1990 - Melting Barbershop</div>
+        
+        <div class="header">
+            <h1>🏰 Ngawi Empire</h1>
+            <p>"Silsilah Takhta Suci dan Arsip Kependudukan Mas Rusdi"</p>
+        </div>
+
+        <div class="status-box">
+            {% if admin == 1 %}
+            <h2>👑 Suki Sang Penakluk Takhta</h2>
+            <p style="color: #ddd; margin-top: 0.5rem; line-height: 1.5;">
+                Puji syukur! Suki berhasil melakukan kudeta takhta Ngawi Land! Para sesepuh seperti Mas Amba dan dewan tetua kini tunduk padamu. Perang Besar Ngawi telah berakhir! Ini adalah dekrit kemenanganmu:
+            </p>
+            <div class="flag-box" id="the-flag">{{ flag }}</div>
+            <div style="margin-top: 1.5rem; border-radius: 10px; overflow: hidden; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/-W_ojeSTUwM?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            {% else %}
+            <h2>👤 Pasukan Suki</h2>
+            <p style="color: #ddd; margin-top: 0.5rem; line-height: 1.5;">
+                Koe ki mung Suki #1 mas, ra usah aneh-aneh. Takhta User ID 0 secara mutlak dikhususkan untuk Pemimpin Ngawi Selatan Mas Rusdi, Sang Legenda Melting Barbershop! Jangan harap bisa menggulingkan Kerajaan bersama Pasukan Suki Kamu.
+            </p>
+            <div style="margin-top: 1.5rem; background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 10px; border: 1px dashed rgba(138, 43, 226, 0.6); text-align: center;">
+                <p style="margin-bottom: 0.8rem; color: #d4af37; font-weight: bold; font-style: italic;">🎶 Memutar: Sanes - GuyonWaton x Denny Caknan</p>
+                <audio id="sanes-audio" controls autoplay loop style="width: 100%; height: 40px;">
+                    <source src="/static/sanes.mp3" type="audio/mpeg">
+                    Browser-mu tidak mendukung elemen audio.
+                </audio>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>Identitasmu saiki: <strong style="color: #d4af37;">{{ username }}</strong></label>
+            <form action="/set-username" method="POST" class="input-wrapper">
+                <input type="text" name="username" placeholder="Ganti jenengmu kene, le..." required>
+                <button type="submit">Sumpah Setia</button>
+            </form>
+        </div>
+
+        {% if error %}
+        <div class="error-box">
+            <h3>⚠️ Kutukan Sesepuh Ngawi Terdeteksi</h3>
+            <p>{{ error }}</p>
+            {% if "database is locked" in error %}
+            <p style="margin-top: 0.5rem;">Pusaka Database terkunci! Sihirnya tidak stabil, silakan <a href="/?reset=1">ritual ulang (reset)</a>.</p>
+            {% endif %}
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #ffcccc; opacity: 0.8;">(Wajar jika melihat "no such table: users" saat pertama kali membuka halaman ini. Ini menandakan garis waktu sedang di-reset.)</p>
+        </div>
+        {% endif %}
+
+        <div class="footer-info">
+            <p><strong>Catatan:</strong> Siklus waktu Ngawi Land akan mereset setiap beberapa saat (Jika mendapat error 500 = time paradox, santai saja dan muat ulang).</p>
+            <p>Kiamat Ngawi berikutnya dalam: <span id="countdown-timer" style="color: #d4af37; font-weight: bold;">{{ time_to_restart }}</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Script untuk menjalankan timer secara real-time di sisi browser
+        (function() {
+            let timerElement = document.getElementById('countdown-timer');
+            if (!timerElement) return;
+            
+            let timeText = timerElement.innerText;
+            let nums = timeText.match(/\d+/g);
+            if (!nums || nums.length < 2) return;
+            
+            let totalSeconds = 0;
+            if (nums.length >= 3) {
+                totalSeconds = parseInt(nums[0]) * 3600 + parseInt(nums[1]) * 60 + parseInt(nums[2]);
+            } else {
+                totalSeconds = parseInt(nums[0]) * 60 + parseInt(nums[1]);
+            }
+            
+            setInterval(function() {
+                if (totalSeconds <= 0) {
+                    location.reload();
+                    return;
+                }
+                totalSeconds--;
+                
+                let h = Math.floor(totalSeconds / 3600);
+                let m = Math.floor((totalSeconds % 3600) / 60);
+                let s = totalSeconds % 60;
+                
+                let hStr = h > 0 ? h + ":" : "0:";
+                let mStr = m < 10 ? "0" + m : m;
+                let sStr = s < 10 ? "0" + s : s;
+                
+                timerElement.innerText = hStr + mStr + ":" + sStr;
+            }, 1000);
+        })();
+    </script>
+</body>
+
+</html>
